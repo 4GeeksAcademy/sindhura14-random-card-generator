@@ -23,6 +23,7 @@ body {
 }
 #bottomSuit {
   right: 0.7rem;
+  transform: rotate(180deg);
 }
 
 #rank {
