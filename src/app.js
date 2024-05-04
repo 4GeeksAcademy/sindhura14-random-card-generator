@@ -11,7 +11,7 @@ window.onload = function() {
   const ranks = ["A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K"];
 
   let button = document.querySelector(".btn");
-  button.addEventListener("click", event => {
+  button.addEventListener("click", (event) => {
     let suit = suits[Math.floor(Math.random() * suits.length)];
     let topSuitDiv = document.querySelector("#topSuit");
     let bottomSuitDiv = document.querySelector("#bottomSuit");
@@ -20,13 +20,14 @@ window.onload = function() {
 
     let rank = ranks[Math.floor(Math.random() * ranks.length)];
     let rankDiv = document.querySelector("#rank");
+    rankDiv.innerHTML = rank;
 
     if (rank == 10) {
       rankDiv.style.left = "2.5rem";
     } else {
       rankDiv.style.left = "5rem";
     }
-    rankDiv.innerHTML = rank;
+
     if (suit == "\u2665" || suit == "\u2666") {
       topSuitDiv.style.color = "red";
       bottomSuitDiv.style.color = "red";
