@@ -25,7 +25,7 @@ window.onload = function() {
   }
 
   let button = document.querySelector(".btn");
-  button.addEventListener("click", event => {
+  button.addEventListener("click", (event) => {
     //getting the card from deck array
     let currentCard = deck[cardIndex];
     cardIndex++;
@@ -41,7 +41,7 @@ window.onload = function() {
 
     //setting the suit
     let suitDivs = document.querySelectorAll(".suit");
-    suitDivs.forEach(suitDiv => {
+    suitDivs.forEach((suitDiv) => {
       suitDiv.innerHTML = currentCard.suit;
       suitDiv.style.color =
         currentCard.suit == "\u2665" || currentCard.suit == "\u2666"
@@ -52,7 +52,7 @@ window.onload = function() {
     //setting the rank
     let rankDiv = document.querySelector("#rank");
     rankDiv.innerHTML = currentCard.rank;
-    rank.style.color =
+    rankDiv.style.color =
       currentCard.suit == "\u2665" || currentCard.suit == "\u2666" ? "red" : "";
 
     //adjusting the position when number is 10
