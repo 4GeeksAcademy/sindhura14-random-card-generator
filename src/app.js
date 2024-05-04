@@ -8,7 +8,7 @@ import "./assets/img/4geeks.ico";
 window.onload = function() {
   //write your code here
   const suits = ["\u2660", "\u2665", "\u2666", "\u2663"];
-  const ranks = ["A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K"];
+  const ranks = [2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K", "A"];
   let cardIndex = 0;
 
   //constructor to create an object with rank and suit
@@ -40,31 +40,22 @@ window.onload = function() {
     divContainer.classList.remove("d-none");
 
     //setting the suit
-    let topSuitDiv = document.querySelector("#topSuit");
-    let bottomSuitDiv = document.querySelector("#bottomSuit");
-    topSuitDiv.innerHTML = currentCard.suit;
-    bottomSuitDiv.innerHTML = currentCard.suit;
+    let suitDivs = document.querySelectorAll(".suit");
+    suitDivs.forEach(suitDiv => {
+      suitDiv.innerHTML = currentCard.suit;
+      suitDiv.style.color =
+        currentCard.suit == "\u2665" || currentCard.suit == "\u2666"
+          ? "red"
+          : "";
+    });
 
     //setting the rank
     let rankDiv = document.querySelector("#rank");
     rankDiv.innerHTML = currentCard.rank;
+    rank.style.color =
+      currentCard.suit == "\u2665" || currentCard.suit == "\u2666" ? "red" : "";
 
     //adjusting the position when number is 10
-    if (currentCard.rank == 10) {
-      rankDiv.style.left = "2.5rem";
-    } else {
-      rankDiv.style.left = "5rem";
-    }
-
-    //setting the color to red for heart and diamond
-    if (currentCard.suit == "\u2665" || currentCard.suit == "\u2666") {
-      topSuitDiv.style.color = "red";
-      bottomSuitDiv.style.color = "red";
-      rankDiv.style.color = "red";
-    } else {
-      topSuitDiv.style.color = "";
-      bottomSuitDiv.style.color = "";
-      rankDiv.style.color = "";
-    }
+    rankDiv.style.left = currentCard.rank == 10 ? "2.5rem" : "5rem";
   });
 };
