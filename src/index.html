@@ -12,18 +12,16 @@
     />
     <link rel="shortcut icon" href="./4geeks.ico" />
   </head>
-  <body>
-    <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
-      </div>
+  <body class="bg-primary-subtle">
+    <div class="p-4 text-center">
+      <button type="button" class="btn btn-secondary">
+        Next
+      </button>
+    </div>
+    <div class="container mx-auto border border-dark position-relative">
+      <div id="topSuit" class="position-absolute"></div>
+      <div id="rank" class="position-absolute"></div>
+      <div id="bottomSuit" class="position-absolute bottom-0"></div>
     </div>
   </body>
 </html>
